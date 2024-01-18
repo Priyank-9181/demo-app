@@ -8,23 +8,23 @@
 
 import Example1 from "./HooksExample/UseEffectExample/Example1";
 
-// import UseStateExample1 from "./UseStateExamle/UseStateExample1";
-// import UseStateExample2 from "./UseStateExamle/UseStateExample2";
+// import UseStateExample1 from "../src/HooksExample/UseStateExample/UseStateExample1";
+// import UseStateExample2 from "../src/HooksExample/UseStateExample/UseStateExample2";
 
 function App() {
   // return (
-  //   // <div>
-  //   //   <BrowserRouter>
-  //   //     <Routes>
-  //   //       <Route path="/" element={<Layout />}>
-  //   //         <Route index element={<ShinchanFnadom />} />
-  //   //         <Route path="character/:name" element={<CharacterDetail />} />
-  //   //         <Route path="contact" element={<Contact />} />
-  //   //         <Route path="about" element={<About />} />
-  //   //       </Route>
-  //   //     </Routes>
-  //   //   </BrowserRouter>
-  //   // </div>
+  //   <div>
+  //     <BrowserRouter>
+  //       <Routes>
+  //         <Route path="/" element={<Layout />}>
+  //           <Route index element={<ShinchanFnadom />} />
+  //           <Route path="character/:name" element={<CharacterDetail />} />
+  //           <Route path="contact" element={<Contact />} />
+  //           <Route path="about" element={<About />} />
+  //         </Route>
+  //       </Routes>
+  //     </BrowserRouter>
+  //   </div>
   // );
 
   // return <UseStateExample1 />
