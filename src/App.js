@@ -6,32 +6,30 @@
 // import About from "./Pages/About";
 // import ShinchanFnadom from './Pages/ShinchanFnadom';
 
-import Example1 from "./HooksExample/UseEffectExample/Example1";
+// import Example1 from "./HooksExample/UseEffectExample/Example1";
+import HomePage from "./HooksExample/wheatherApp/HomePage";
 
 // import UseStateExample1 from "../src/HooksExample/UseStateExample/UseStateExample1";
 // import UseStateExample2 from "../src/HooksExample/UseStateExample/UseStateExample2";
 
 function App() {
-  // return (
-  //   <div>
-  //     <BrowserRouter>
-  //       <Routes>
-  //         <Route path="/" element={<Layout />}>
-  //           <Route index element={<ShinchanFnadom />} />
-  //           <Route path="character/:name" element={<CharacterDetail />} />
-  //           <Route path="contact" element={<Contact />} />
-  //           <Route path="about" element={<About />} />
-  //         </Route>
-  //       </Routes>
-  //     </BrowserRouter>
-  //   </div>
-  // );
+  return (
+    // <div>
+    //   <BrowserRouter>
+    //     <Routes>
+    //       <Route path="/" element={<Layout />}>
+    //         <Route index element={<ShinchanFnadom />} />
+    //         <Route path="character/:name" element={<CharacterDetail />} />
+    //         <Route path="contact" element={<Contact />} />
+    //         <Route path="about" element={<About />} />
+    //       </Route>
+    //     </Routes>
+    //   </BrowserRouter>
+    // </div>
 
-  // return <UseStateExample1git />
+    <HomePage />
+  );
 
-  // return <UseStateExample2 />
-
-  return <Example1 />
 }
 
 export default App;
