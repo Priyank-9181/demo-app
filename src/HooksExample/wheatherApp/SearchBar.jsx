@@ -45,10 +45,16 @@ function SearchBar(props) {
           cursor: "pointer",
         }}
         onClick={() => {
-          fetchData(city, function (data) {
-            console.log(data);
-            return props.setWeather(data);
-          });
+          fetchData(
+            city,
+            function (data) {
+              console.log(data);
+              return props.setWeather(data);
+            },
+            function (error) {
+              props.setError(error);
+            }
+          );
         }}
       >
         Submit

@@ -1,16 +1,6 @@
-// import Masala from './Pages/Masala';
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Layout from "./layout/Layout";
-// import CharacterDetail from "./Pages/CharacterDetail";
-// import Contact from "./Pages/Contact";
-// import About from "./Pages/About";
-// import ShinchanFnadom from './Pages/ShinchanFnadom';
-
-// import Example1 from "./HooksExample/UseEffectExample/Example1";
-import HomePage from "./HooksExample/wheatherApp/HomePage";
-
-// import UseStateExample1 from "../src/HooksExample/UseStateExample/UseStateExample1";
-// import UseStateExample2 from "../src/HooksExample/UseStateExample/UseStateExample2";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./HooksExample/pokedex/HomePage";
+import Layout from "./layout/pokemonLayout/Layout";
 
 function App() {
   return (
@@ -27,14 +17,14 @@ function App() {
     //   </BrowserRouter>
     // </div>
 
-    <HomePage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-
 }
 
 export default App;
-
-// {/* <BrowserRouter>
-// {/* <Masala/> */}
-// {/* <ShinchanFnadom /> */}
-// {/* </BrowserRouter> */}

@@ -1,18 +1,15 @@
 import React from "react";
-import styles from "../styles/Navabar.module.css";
-import { companyName } from "../DataFiles/ShinchanData";
+import { companyName } from "../../DataFiles/ShinchanData";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div>
-      <nav 
-      className={styles.navbar}
-      >
+      <nav>
         <ul>
-          <h1>{companyName}</h1>
+          <h1>Pokemon Detail</h1>
           <li>
-            <Link  to="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
             <Link to="/about">About</Link>

@@ -6,6 +6,7 @@ import WeatherCard from "./WeatherCard";
 
 function HomePage() {
   const [weather, setWeather] = useState(null);
+  const [error, setError] = useState(null);
 
   const key = 123432;
 
@@ -18,7 +19,10 @@ function HomePage() {
       style={{
         width: "100vw",
         height: "100vh",
-        backgroundColor: "#362f64",
+        // backgroundColor: "#362f64",
+        background: "rgb(2,0,36)",
+        background:
+          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(10,9,123,1) 0%, rgba(15,15,177,1) 24%, rgba(8,114,216,1) 69%, rgba(0,212,255,1) 100%)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -32,8 +36,13 @@ function HomePage() {
           flexDirection: "column",
         }}
       >
-        <SearchBar key={key} weather={weather} setWeather={setWeather} />
-        <WeatherCard weather={weather} />
+        <SearchBar
+          key={key}
+          weather={weather}
+          setWeather={setWeather}
+          setError={setError}
+        />
+        <WeatherCard weather={weather} error={error} />
       </div>
     </div>
   );
