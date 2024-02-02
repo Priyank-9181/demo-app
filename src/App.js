@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./HooksExample/pokedex/HomePage";
-import Layout from "./layout/pokemonLayout/Layout";
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/">
           <Route index element={<HomePage />} />
         </Route>
       </Routes>
