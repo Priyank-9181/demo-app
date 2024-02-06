@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import PokemonCard from "../../Card/pokemon/PokemonCard";
-import {
-  fetchData,
-  fetchPokemon,
-  fetchPokemonList,
-} from "../../services/apiService";
+import { fetchPokemon, fetchPokemonList } from "../../services/apiService";
 import { useEffect } from "react";
 import style from "../pokedex/button.module.css";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  let [page, setPage] = useState(0);
+  const [page, setPage] = useState(0);
 
   async function getPokemonList() {
     const temp = [];
@@ -30,6 +27,8 @@ function HomePage() {
       setLoading(false);
     }
   }
+
+  
   useEffect(
     function () {
       getPokemonList();
@@ -42,7 +41,7 @@ function HomePage() {
   function handleClickPrevious() {
     if (page > 0) {
       setPage(() => {
-        return --page;
+        return page - 1;
       });
     } else {
       setPage(0);
@@ -51,7 +50,7 @@ function HomePage() {
 
   function handleClickNext() {
     setPage(() => {
-      return ++page;
+      return page + 1;
     });
   }
 
@@ -99,15 +98,26 @@ function HomePage() {
       >
         {pokemon.map(function (value) {
           return (
-            <PokemonCard
-              key={value.id}
-              name={value.name}
-              id={value.id}
-              img={value.sprites.other["official-artwork"].front_default}
-              tags={value.types.map(function (t) {
-                return t.type.name;
-              })}
-            />
+            <Link
+              style={{
+                textDecorationLine: "none",
+                gap: "16px",
+                display: "flex",
+                flexWrap: "wrap",
+                width: "auto",
+              }}
+              to={"pokemon/" + value.name}
+            >
+              <PokemonCard
+                key={value.id}
+                name={value.name}
+                id={value.id}
+                img={value.sprites.other["official-artwork"].front_default}
+                tags={value.types.map(function (t) {
+                  return t.type.name;
+                })}
+              />
+            </Link>
           );
         })}
       </div>

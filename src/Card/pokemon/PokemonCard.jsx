@@ -109,6 +109,11 @@ function PokemonCard(props) {
     borderRadius: "20px",
   };
 
+  function padding(num) {
+    const str = num.toString();
+    return "#" + str.padStart(4, "0");
+  }
+
   return (
     <div style={cardContainerStyles}>
       <h6
@@ -116,7 +121,7 @@ function PokemonCard(props) {
           color: "gray",
         }}
       >
-        {"#" + props.id}
+        {padding(props.id)}
       </h6>
       <div style={imageContainerStyles}>
         <img src={props.img} alt={props.name} style={imageStyles} />
