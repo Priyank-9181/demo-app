@@ -1,0 +1,81 @@
+@import "https://fonts.googleapis.com/css?family=Raleway";
+
+* {
+  cursor: none;
+}
+
+body {
+  overflow: hidden;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+}
+
+.loading {
+  background-color: #fff;
+  width: 100%;
+  display: fixed;
+}
+
+.loading .msg {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 888;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.loading .msg:after {
+  content: "";
+  border-top: 6px solid #e91e63;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  position: absolute;
+  bottom: -7px;
+  left: 44%;
+}
+
+.loading img {
+  display: block;
+  min-height: 209px;
+  min-width: 200px;
+  position: relative;
+  z-index: 9;
+}
+
+.loading .result {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 888;
+}
+
+.original:first-of-type {
+  z-index: 999;
+}
+
+.pok {
+  position: absolute;
+  z-index: 10;
+  transform: scale(0.5);
+}
+
+.mouse {
+  position: absolute;
+  z-index: 10;
+  animation: mouseRotate 2s infinite linear;
+}
+
+.rotate {
+  transform: roteteY(360deg);
+}
+
+@keyframes mouseRotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
