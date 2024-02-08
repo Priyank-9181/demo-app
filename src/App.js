@@ -1,10 +1,11 @@
-import HookRefInputExample from "./Hooks/HookRefInputExample";
+import ThemeChange from "./Hooks/context/theme/ThemeChange";
+import UseOfThemeContext from "./Hooks/context/theme/UseOfThemeContext";
 
 function App() {
   return (
-    <div>
-      <HookRefInputExample />
-    </div>
+    <UseOfThemeContext>
+      <ThemeChange />
+    </UseOfThemeContext>
   );
 }
 
