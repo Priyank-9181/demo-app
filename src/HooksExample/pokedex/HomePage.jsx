@@ -1,149 +1,85 @@
 import React, { useState } from "react";
 import PokemonCard from "../../Card/pokemon/PokemonCard";
-import { fetchPokemon, fetchPokemonList } from "../../services/apiService";
-import { useEffect } from "react";
-import style from "../pokedex/button.module.css";
-import { Link } from "react-router-dom";
+import Loading from "./Loading";
+import Pagination from "./Pagination";
+import { useMultipleFetch } from "./useFetch";
+import SearchBar from "./SearchBar";
+import { fetchPokemonDetail } from "../../services/apiService";
 
 function HomePage() {
-  const [pokemon, setPokemon] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [page, setPage] = useState(0);
+  const limit = 20;
+  const offset = page * limit;
 
-  async function getPokemonList() {
-    const temp = [];
-    setLoading(true);
-    try {
-      const data = await fetchPokemonList(page);
-      for (const p of data.results) {
-        const detail = await fetchPokemon(p.url);
-        temp.push(detail);
-      }
-      setPokemon(temp);
-    } catch (e) {
-      setError(e);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  
-  useEffect(
-    function () {
-      getPokemonList();
-    },
-    [page]
+  const [searchData, setSearchData] = useState(null);
+  const [query, setQuery] = useState(null);
+  const { loading, pokemon, error } = useMultipleFetch(
+    `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
   );
 
-  console.log(pokemon);
-
-  function handleClickPrevious() {
-    if (page > 0) {
-      setPage(() => {
-        return page - 1;
-      });
-    } else {
-      setPage(0);
-    }
+  async function getDetail() {
+    const data = await fetchPokemonDetail(query);
+    setSearchData(data);
   }
 
-  function handleClickNext() {
-    setPage(() => {
-      return page + 1;
-    });
-  }
+  // if (query && searchData !== null) {
+  //   setSearchData(null);
+  // }
 
-  if (loading)
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100vw",
-          height: "100vh",
-        }}
-      >
-        <div className={style.spinner_7}></div>
-      </div>
-    );
+  if (loading) return <Loading />;
 
   if ((!loading && error) || (!loading && !pokemon))
     return <h1>Something went wrong...</h1>;
 
   return (
-    <div
-      style={{
-        padding: "16px",
-      }}
-    >
-      <h1
-        style={{
-          textAlign: "center",
-          fontSize: "2.2rem",
-        }}
-      >
-        Pokemon's Card
-      </h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          gap: "32px",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {pokemon.map(function (value) {
-          return (
-            <Link
-              style={{
-                textDecorationLine: "none",
-                gap: "16px",
-                display: "flex",
-                flexWrap: "wrap",
-                width: "auto",
-              }}
-              to={"pokemon/" + value.name}
-            >
-              <PokemonCard
-                key={value.id}
-                name={value.name}
-                id={value.id}
-                img={value.sprites.other["official-artwork"].front_default}
-                tags={value.types.map(function (t) {
-                  return t.type.name;
-                })}
-              />
-            </Link>
-          );
-        })}
+    <>
+      <div style={{ overflow: "hidden" }}>
+        <SearchBar setQuery={setQuery} getDetail={getDetail} />
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-around",
-          padding: "24px",
+          padding: "16px",
         }}
       >
-        {page === 0 ? (
-          <button onClick={handleClickNext} className={style.button_49}>
-            Next
-          </button>
-        ) : (
-          <>
-            <button onClick={handleClickPrevious} className={style.button_49}>
-              Previous
-            </button>
-            <button onClick={handleClickNext} className={style.button_49}>
-              Next
-            </button>
-          </>
-        )}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            gap: "32px",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {searchData && query ? (
+            <PokemonCard
+              key={searchData.id}
+              name={searchData.name}
+              id={searchData.id}
+              img={searchData.sprites.other["official-artwork"].front_default}
+              tags={searchData.types.map(function (t) {
+                return t.type.name;
+              })}
+            />
+          ) : (
+            pokemon.map(function (value) {
+              return (
+                <PokemonCard
+                  key={value.id}
+                  name={value.name}
+                  id={value.id}
+                  img={value.sprites.other["official-artwork"].front_default}
+                  tags={value.types.map(function (t) {
+                    return t.type.name;
+                  })}
+                />
+              );
+            })
+          )}
+        </div>
+        <Pagination page={page} setPage={setPage} />
       </div>
-    </div>
+    </>
   );
 }
 
