@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./HooksExample/pokedex/HomePage";
-import PokemonDetails from "./HooksExample/pokedex/PokemonDetails";
+import HomePage from "./HooksExample/pokedex/page/HomePage";
+import PokemonDetails from "./HooksExample/pokedex/page/PokemonDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<HomePage />} />
-          <Route path="pokemon/:name" element={<PokemonDetails />} />
+          <Route path="pokemon/:id" element={<PokemonDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

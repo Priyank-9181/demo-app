@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function PokemonCard(props) {
+  const navigate = useNavigate();
   function getTagBackgroundColor(type) {
     switch (type) {
       case "grass":
@@ -54,6 +56,7 @@ function PokemonCard(props) {
     padding: "16px",
     width: "100%",
     maxWidth: "250px",
+    cursor: "pointer",
 
     "@media (min-width: 768px)": {
       maxWidth: "400px",
@@ -115,7 +118,12 @@ function PokemonCard(props) {
   }
 
   return (
-    <div style={cardContainerStyles}>
+    <div
+      style={cardContainerStyles}
+      onClick={() => {
+        navigate(`pokemon/${props.id}`);
+      }}
+    >
       <h6
         style={{
           color: "gray",

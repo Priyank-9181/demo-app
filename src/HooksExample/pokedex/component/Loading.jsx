@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../pokedex/button.module.css";
+import style from "../../pokedex/style/button.module.css";
 
 function Loading() {
   return (

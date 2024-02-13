@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../pokedex/button.module.css";
+import style from "../style/button.module.css";
 
 function Pagination(props) {
   function handleClickPrevious() {

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import PokemonCard from "../../Card/pokemon/PokemonCard";
-import Loading from "./Loading";
-import Pagination from "./Pagination";
-import { useMultipleFetch } from "./useFetch";
-import SearchBar from "./SearchBar";
-import { fetchPokemonDetail } from "../../services/apiService";
+import { fetchPokemonDetail } from "../../../services/apiService";
+import Loading from "../component/Loading";
+import Pagination from "../component/Pagination";
+import SearchBar from "../component/SearchBar";
+import PokemonCard from "../component/pokemon/PokemonCard";
+import { useMultipleFetch } from "../utils/useFetch";
 
 function HomePage() {
   const [page, setPage] = useState(0);
@@ -50,6 +50,7 @@ function HomePage() {
             justifyContent: "center",
             alignItems: "center",
           }}
+          
         >
           {searchData && query ? (
             <PokemonCard
