@@ -34,6 +34,5 @@ export async function fetchPokemon(url) {
 export async function fetchPokemonDetail(name) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
   const data = response.json();
-  console.log(data);
   return data;
 }

@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import StatsChart from "../component/DetailComponent/StatsChart";
 import Loading from "../component/Loading";
 import { useFetch } from "../utils/useFetch";
+import TypeBadge from "../component/DetailComponent/TypeBadge";
+import EvolutionOfPokemon from "../component/DetailComponent/EvolutionOfPokemon";
 
 function PokemonDetails() {
   const { id: str } = useParams();
-  const id = Number(str);
+  const id1 = Number(str);
 
-  const [handleID, setHandleId] = useState(id);
+  const [handleID, setHandleId] = useState(id1);
 
   const { pokemon, loading, error } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${handleID}`
   );
 
-  const { pokemon: info } = useFetch(
-    pokemon
-      ? pokemon.species.url
-      : `https://pokeapi.co/api/v2/pokemon/${handleID}`
-  );
+  let temp;
+
+  if (pokemon) {
+    temp = pokemon.species.url;
+  }
+
+  const { pokemon: info } = useFetch(pokemon ? pokemon.species.url : `null`);
 
   if (loading) {
     return <Loading />;
@@ -33,22 +38,22 @@ function PokemonDetails() {
   }
 
   function handleNext() {
-    if (pokemon.id > 1025) {
-      setHandleId((i) => ++i);
+    if (pokemon.id < 1025) {
+      setHandleId(() => handleID + 1);
     } else {
       setHandleId(1);
     }
   }
 
   function handlePrevious() {
-    if (pokemon.id < 1) {
-      setHandleId((i) => --i);
+    if (pokemon.id > 1) {
+      setHandleId(() => handleID - 1);
     } else {
       setHandleId(1025);
     }
   }
 
-  console.log(pokemon);
+  console.log(info);
   return (
     <div>
       {/* Buttons */}
@@ -72,6 +77,7 @@ function PokemonDetails() {
         <h1>{`${pokemon.name} ` + padding(pokemon.id)}</h1>
       </div>
 
+      {/* Basic Info */}
       <div
         style={{
           display: "flex",
@@ -102,7 +108,13 @@ function PokemonDetails() {
             {/* Info */}
             <div>
               <p style={{ fontSize: "1.2rem" }}>
-                {info.flavor_text_entries[2].flavor_text}
+                {info.flavor_text_entries &&
+                info.flavor_text_entries.length &&
+                info.flavor_text_entries.length > 0
+                  ? info.flavor_text_entries[0].flavor_text
+                      .toString()
+                      .replace("\f", " ")
+                  : "No Record Found"}
               </p>
             </div>
 
@@ -136,7 +148,7 @@ function PokemonDetails() {
 
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <span>Category</span>
-                  <h4></h4>
+                  <h4>{pokemon.types[0].type.name}</h4>
                 </div>
               </div>
 
@@ -172,6 +184,69 @@ function PokemonDetails() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Extra Info */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "24px",
+        }}
+      >
+        <div
+          style={{
+            width: "70%",
+            height: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "24px",
+            backgroundColor: "rgb(194, 194, 194)",
+            borderRadius: "24px",
+            padding: "24px",
+            gap: "24px",
+          }}
+        >
+          <StatsChart stats={pokemon.stats} />
+          {/*Type Badge */}
+          <div
+            style={{
+              margin: "0",
+              top: "0",
+            }}
+          >
+            <TypeBadge pokemon={pokemon} />
+          </div>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "24px",
+        }}
+      >
+        <div
+          style={{
+            width: "70%",
+            height: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "24px",
+            backgroundColor: "rgb(194, 194, 194)",
+            marginBottom: "24px",
+            borderRadius: "24px",
+            padding: "24px",
+            gap: "24px",
+          }}
+        >
+          <EvolutionOfPokemon id1={handleID} />
         </div>
       </div>
     </div>

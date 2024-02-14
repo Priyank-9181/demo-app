@@ -65,3 +65,37 @@ export function useMultipleFetch(url) {
 
   return { loading, pokemon, error };
 }
+
+export function useMultiple(urls) {
+  const [loading, setLoading] = useState(false);
+  const [pokemon, setPokemon] = useState(null);
+  const [error, setError] = useState(null);
+
+  async function fetchData() {
+    try {
+      setLoading(true);
+      const promises = urls.map(async (value) => {
+        const response = await fetch(value);
+        const json = await response.json();
+        return json;
+      });
+      const resolved = await Promise.all(promises);
+      setPokemon(resolved);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(
+    function () {
+      if (urls) {
+        fetchData();
+      }
+    },
+    [urls]
+  );
+
+  return { loading, pokemon, error };
+}
