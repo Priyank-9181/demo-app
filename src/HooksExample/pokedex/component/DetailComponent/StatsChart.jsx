@@ -18,8 +18,6 @@ function StatsChart({ stats }) {
     return v.base_stat;
   });
 
-  console.log(stat, value);
-
   const options = {
     title: {
       text: "Stats",
@@ -45,7 +43,10 @@ function StatsChart({ stats }) {
         borderRadius: "24px",
       }}
     >
-      <CanvasJSChart options={options} />
+      <CanvasJSChart
+        options={options}
+      
+      />
     </div>
   );
 }
