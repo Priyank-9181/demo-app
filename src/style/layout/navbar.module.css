@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  height: 5rem;
+  background-color: blue;
+  padding: 16px 32px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  display: flex;
+}
+
+.linksContainer ul {
+ display: flex;
+ list-style-type: none;
+ gap: 16px;
+ margin: 0;
+ padding: 0;
+ font-size: 1.1rem;
+}
