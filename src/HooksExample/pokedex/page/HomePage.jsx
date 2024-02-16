@@ -3,7 +3,8 @@ import { fetchPokemonDetail } from "../../../services/apiService";
 import Loading from "../component/Loading";
 import Pagination from "../component/Pagination";
 import SearchBar from "../component/SearchBar";
-import PokemonCard from "../component/pokemon/PokemonCard";
+import PokemonList from "../component/pokemon/PokemonList";
+import styles from "../style/pokedex/homePage.module.css";
 import { useMultipleFetch } from "../utils/useFetch";
 
 function HomePage() {
@@ -22,10 +23,6 @@ function HomePage() {
     setSearchData(data);
   }
 
-  // if (query && searchData !== null) {
-  //   setSearchData(null);
-  // }
-
   if (loading) return <Loading />;
 
   if ((!loading && error) || (!loading && !pokemon))
@@ -41,42 +38,12 @@ function HomePage() {
           padding: "16px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            gap: "32px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          
-        >
-          {searchData && query ? (
-            <PokemonCard
-              key={searchData.id}
-              name={searchData.name}
-              id={searchData.id}
-              img={searchData.sprites.other["official-artwork"].front_default}
-              tags={searchData.types.map(function (t) {
-                return t.type.name;
-              })}
-            />
-          ) : (
-            pokemon.map(function (value) {
-              return (
-                <PokemonCard
-                  key={value.id}
-                  name={value.name}
-                  id={value.id}
-                  img={value.sprites.other["official-artwork"].front_default}
-                  tags={value.types.map(function (t) {
-                    return t.type.name;
-                  })}
-                />
-              );
-            })
-          )}
+        <div className={styles.cardContainer}>
+          <PokemonList
+            pokemon={pokemon}
+            searchData={searchData}
+            query={query}
+          />
         </div>
         <Pagination page={page} setPage={setPage} />
       </div>
