@@ -1,17 +1,31 @@
 import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import CarouselList from "./CarouselList";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
+    <button
+      style={{
+        position: "absolute",
+        top: "50%",
+        right: "2.5%",
+        backgroundColor: "white",
+        zIndex: 100,
+        height: "35px",
+        width: "35px",
+        color: "black",
+        transform: "translate(-2.5%, -50%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
       onClick={onClick}
-    />
+    >
+      <i style={{ fontSize: "1.2rem" }} className="fa-solid fa-arrow-right"></i>
+    </button>
   );
 }
 

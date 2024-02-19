@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../style/component/carousel.module.css";
+import styles from "../../../style/component/page/carousel.module.css";
 
 function CarouselList({ src, alt }) {
   return (
