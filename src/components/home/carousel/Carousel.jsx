@@ -4,19 +4,46 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import CarouselList from "./CarouselList";
 
-function SampleNextArrow(props) {
+function NextArrow(props) {
   const { onClick } = props;
   return (
     <button
       style={{
         position: "absolute",
         top: "50%",
-        right: "2.5%",
-        backgroundColor: "white",
+        right: "3.5%",
+        backgroundColor: "Transparent",
+        border: "none",
         zIndex: 100,
         height: "35px",
         width: "35px",
-        color: "black",
+        color: "white",
+        transform: "translate(-3.5%, -50%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      onClick={onClick}
+    >
+      <i className="fa-solid fa-arrow-right" style={{ fontSize: "1.2rem" }}></i>
+    </button>
+  );
+}
+
+function PrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <button
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "2.5%",
+        backgroundColor: "Transparent",
+        border: "none",
+        zIndex: 100,
+        height: "35px",
+        width: "35px",
+        color: "white",
         transform: "translate(-2.5%, -50%)",
         display: "flex",
         alignItems: "center",
@@ -24,34 +51,18 @@ function SampleNextArrow(props) {
       }}
       onClick={onClick}
     >
-      <i style={{ fontSize: "1.2rem" }} className="fa-solid fa-arrow-right"></i>
+      <i className="fa-solid fa-arrow-left" style={{ fontSize: "1.2rem" }}></i>
     </button>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
   );
 }
 
 function Carousel() {
   const settings = {
-    dots: true,
-    infinite: true,
     speed: 3000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
-    cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   const carousel = [
