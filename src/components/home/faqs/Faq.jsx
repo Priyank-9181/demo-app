@@ -6,7 +6,7 @@ function Faq() {
   return (
     <div className={styles.container}>
       <div className={styles.queContainer}>
-        <i class="fa-solid fa-circle-question"></i>
+        <i className="fa-solid fa-circle-question"></i>
         <p>Lorem ipsum dolor sit amet.</p>
         <i
           className="fa-solid fa-sort-down"

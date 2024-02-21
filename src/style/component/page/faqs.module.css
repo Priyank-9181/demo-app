@@ -10,6 +10,10 @@
   flex-grow: 1;
 }
 
+.queContainer i {
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -31,4 +35,5 @@
   padding: 16px;
   align-items: center;
   gap: 16px;
+  background-color: #ede7f6;
 }

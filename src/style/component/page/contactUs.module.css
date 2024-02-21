@@ -1,0 +1,65 @@
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 32px;
+  width: auto;
+  background-color: #8c9eff;
+  justify-content: center;
+}
+
+.detailContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detailContainer i {
+  font-size: 1.5rem;
+}
+
+.detailContainer div p {
+  margin: 0%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 16px 32px;
+  background-color: #f1f8e9;
+  gap: 16px;
+}
+
+.formContainer {
+  padding: 16px;
+  background-color: #8c9eff;
+  flex-grow: 1;
+}
+
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.formContainer form label {
+    font-size: 1.5rem;
+    color: #f1f8e9;
+}
+
+.formContainer form button {
+    border: none;
+    background-color: rgb(111, 68, 58);
+    padding: 16px;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50%;
+}
+
+@media screen and (max-width : 600px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

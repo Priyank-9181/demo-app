@@ -1,4 +1,34 @@
 body {
   height: 100vh;
-  width: 100vw;
+  width: 98.2vw;
+}
+
+#whatsapp {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+#whatsappImg{
+  width: 60px;
+  height: 60px;
+  border-radius: 40%;
+  animation-name: identifier;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes identifier {
+  0%{
+    height: 25px;
+  }
+  100%{
+    height: 60pxs;
+  }
 }
