@@ -10,6 +10,7 @@ function Navbar() {
       <div className={styles.linksContainer}>
         <ul>
           <li>Home</li>
+          <li>Pokedex</li>
           <li>About Us</li>
           <li>Contact Us</li>
         </ul>

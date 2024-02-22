@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "../../../style/component/page/contactUs.module.css";
 
-import { sendMailApiService } from "../../../apiServices";
+import { sendMailApiService } from "../../../apiServices/apiService";
 import Module from "../../common/Module";
 
 function FormDetails() {
