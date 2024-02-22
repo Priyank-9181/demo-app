@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import BasicInfo from "../pokedex/component/DetailComponent/BasicInfo";
-import EvolutionOfPokemon from "../pokedex/component/DetailComponent/EvolutionOfPokemon";
-import ExtraInfo from "../pokedex/component/DetailComponent/ExtraInfo";
-import HandleButton from "../pokedex/component/DetailComponent/HandleButton";
-import TitleComponent from "../pokedex/component/DetailComponent/TitleComponent";
+import BasicInfo from "../components/DetailComponent/BasicInfo";
+import EvolutionOfPokemon from "../components/DetailComponent/EvolutionOfPokemon";
+import ExtraInfo from "../components/DetailComponent/ExtraInfo";
+import HandleButton from "../components/DetailComponent/HandleButton";
+import TitleComponent from "../components/DetailComponent/TitleComponent";
 import Loading from "../components/common/Loading";
 import styles from "../style/pokemonDetail/detailPage.module.css";
-import { useFetch } from "../pokedex/utils/useFetch";
+import { useFetch } from "../utils/useFetch";
 
 function PokemonDetails() {
   const { id: str } = useParams();

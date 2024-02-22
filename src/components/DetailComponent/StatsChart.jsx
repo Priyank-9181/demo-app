@@ -1,6 +1,6 @@
 import React from "react";
 import CanvasJSReact from "@canvasjs/react-charts";
-import Loading from "../../../components/common/Loading";
+import Loading from "../common/Loading";
 
 function StatsChart({ stats }) {
   let CanvasJS = CanvasJSReact.CanvasJS;

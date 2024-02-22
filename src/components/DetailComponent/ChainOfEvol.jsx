@@ -1,6 +1,6 @@
 import React from "react";
 import { useMultiple } from "../../utils/useFetch";
-import Loading from "../../../components/common/Loading";
+import Loading from "../common/Loading";
 import { useNavigate } from "react-router-dom";
 import styles from "../../style/pokemonDetail/chainOfEvol.module.css";
 

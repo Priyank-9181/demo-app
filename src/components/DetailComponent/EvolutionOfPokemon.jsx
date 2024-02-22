@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchPokemon } from "../../../../services/apiService";
+import { fetchPokemon } from "../../apiServices/apiService";
 import ChainOfEvol from "./ChainOfEvol";
 
 function EvolutionOfPokemon({ id1 }) {
