@@ -1,7 +1,7 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
 
-function PokemonList({ pokemon, searchData, query }) {
+function PokemonList({ pokemon, searchData, query, setSearchData }) {
   return (
     <>
       {searchData && query ? (

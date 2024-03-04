@@ -42,6 +42,7 @@ function HomePage() {
           <PokemonList
             pokemon={pokemon}
             searchData={searchData}
+            setSearchData={setSearchData}
             query={query}
           />
         </div>

@@ -24,8 +24,7 @@ function Pagination(props) {
         height: "70px",
         backgroundColor: "white",
         overflow: "hidden",
-        position: "fixed",
-        bottom: "0",
+        marginTop: "10px",
         boxShadow: "rgba(0, 0, 0, 0.06) 0px 2px 2px 0px inset",
       }}
     >
