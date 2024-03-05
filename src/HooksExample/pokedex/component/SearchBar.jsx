@@ -3,11 +3,17 @@ import { Button, Col, Form, InputGroup, Navbar, Row } from "react-bootstrap";
 
 function SearchBar(props) {
   return (
-    <Navbar className="p-2 bg-body-tertiary justify-content-between">
+    <Navbar
+      className="p-2 justify-content-between"
+      style={{
+        backgroundColor: "#9fa8da",
+      }}
+    >
       <Form inline>
         <h1
           style={{
             fontSize: "2.2rem",
+            color: "white",
           }}
         >
           PokeDex

@@ -22,10 +22,9 @@ function Pagination(props) {
       style={{
         width: "100%",
         height: "70px",
-        backgroundColor: "white",
+        backgroundColor: "#e8eaf6",
         overflow: "hidden",
         marginTop: "10px",
-        boxShadow: "rgba(0, 0, 0, 0.06) 0px 2px 2px 0px inset",
       }}
     >
       <div
