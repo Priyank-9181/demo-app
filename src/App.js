@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import Index from "./pages/Index";
 
 function App() {
-  return <div>okk</div>;
+  return <Index />;
 }
 
 export default App;
