@@ -4,7 +4,7 @@ import styles from "../style/notFound.module.css";
 
 function NotFound() {
   const navigate = useNavigate();
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(3);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -25,8 +25,7 @@ function NotFound() {
           404 <sub>Not Found</sub>
         </h1>
         <p>Page Not Found!</p>
-        <p>Please Go To The Home-Page</p>
-        <p>Go to Home page in {count}</p>
+        <p>Go to Home page in {count}s</p>
       </div>
     </div>
   );

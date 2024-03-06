@@ -1,8 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./HooksExample/pokedex/page/HomePage";
-import PokemonDetails from "./HooksExample/pokedex/page/PokemonDetails";
-import "bootstrap/dist/css/bootstrap.min.css";
 import NotFound from "./HooksExample/pokedex/page/NotFound";
+import PokemonDetails from "./HooksExample/pokedex/page/PokemonDetails";
 
 function App() {
   return (

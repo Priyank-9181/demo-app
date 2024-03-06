@@ -10,7 +10,7 @@ function InfoDescription({ pokemon, info }) {
           {info.flavor_text_entries &&
           info.flavor_text_entries.length &&
           info.flavor_text_entries.length > 0
-            ? info.flavor_text_entries[0].flavor_text
+            ? info.flavor_text_entries[2].flavor_text
                 .toString()
                 .replace("\f", " ")
             : "No Record Found"}
