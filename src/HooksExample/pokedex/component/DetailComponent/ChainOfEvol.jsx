@@ -1,11 +1,9 @@
 import React from "react";
+import styles from "../../style/pokemonDetail/chainOfEvol.module.css";
 import { useMultiple } from "../../utils/useFetch";
 import Loading from "../Loading";
-import { useNavigate } from "react-router-dom";
-import styles from "../../style/pokemonDetail/chainOfEvol.module.css";
 
 function ChainOfEvol({ chain }) {
-  const navigate = useNavigate();
   const { loading, pokemon, error } = useMultiple(chain);
 
   if (loading) {
@@ -18,19 +16,15 @@ function ChainOfEvol({ chain }) {
 
   const imgFrame = pokemon.map((value, index) => {
     return (
-      <div
-        key={index}
-        className={styles.container}
-        onClick={() => {
-          navigate(`pokemon/${value.id}`);
-        }}
-      >
-        <img
-          className={styles.imgContainer}
-          src={value.sprites.other["official-artwork"].front_default}
-        />
-        <h6>{value.name.toUpperCase()}</h6>
-      </div>
+      <a key={index} href={`/pokemon/${value.id}`}>
+        <div className={styles.container}>
+          <img
+            className={styles.imgContainer}
+            src={value.sprites.other["official-artwork"].front_default}
+          />
+          <h6>{value.name.toUpperCase()}</h6>
+        </div>
+      </a>
     );
   });
 

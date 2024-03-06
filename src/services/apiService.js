@@ -9,9 +9,6 @@ export function fetchData(city, callback, errCallback) {
     .catch(errCallback);
 }
 
-// (e) => {
-//   console.log(e);
-// };
 
 export async function fetchPokemonList(page) {
   const limit = 20;
