@@ -1,8 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Index from "./pages/Index";
+import { Provider } from "react-redux";
+import CakeRedux from "./HooksExample/reduxDemo/CakeRedux";
+import { store } from "./redux/store";
 
 function App() {
-  return <Index />;
+  return (
+    <Provider store={store}>
+      <CakeRedux />
+    </Provider>
+  );
 }
 
 export default App;
