@@ -1,13 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider } from "react-redux";
-import CakeRedux from "./HooksExample/reduxDemo/CakeRedux";
-import { store } from "./redux/store";
+import ToDoMain from "./HooksExample/useReducer/todo/ToDoMain";
 
 function App() {
   return (
-    <Provider store={store}>
-      <CakeRedux />
-    </Provider>
+    // <Provider store={store}>
+    //   <CakeRedux />
+    // </Provider>
+
+    <ToDoMain />
   );
 }
 

@@ -1,0 +1,169 @@
+.outerContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.navContainer {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.navContainer h1 {
+  color: #1e88e5;
+  font-size: 4rem;
+  text-decoration: underline;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  margin-top: 60px;
+  height: calc(100vh - 92px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.addTaskContainer {
+  width: 40%;
+  display: flex;
+  padding: 16px;
+  background-color: #0d47a1;
+  gap: 12px;
+  border-radius: 15px;
+}
+
+.addTaskContainer input {
+  flex-grow: 1;
+  border-radius: 15px;
+  border: none;
+  padding-left: 20px;
+  outline: none;
+  padding: 8px;
+}
+
+.addTaskContainer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 16px;
+  color: white;
+  background-color: #1976d2;
+}
+
+.addTaskContainer button:hover {
+  background-color: #1565c0;
+}
+
+.noDataContainer {
+  background-color: #0d47a1;
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 15px;
+}
+
+.taskListContainer {
+  background-color: #0d47a1;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px;
+  border-radius: 15px;
+  min-height: auto;
+  max-height: 350px;
+  overflow-y: scroll;
+  scrollbar-width: 10px;
+  gap: 12px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0d47a1;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #adadad;
+}
+
+.taskContainer {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  align-items: center;
+  background-color: #1565c0;
+}
+
+.taskContainer input[type="text"] {
+  width: 70%;
+  border: none;
+  padding: 4px 16px;
+  border-radius: 15px;
+}
+
+.taskContainer input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.taskContainer p {
+  margin: 0px;
+  color: white;
+  flex-grow: 1;
+  font-size: 1rem;
+}
+
+.taskContainer button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 12px;
+  color: white;
+  background-color: #1565c0;
+}
+
+.taskContainer button:hover {
+  background-color: #0d47a1;
+}
+
+.isCompleteTask {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
