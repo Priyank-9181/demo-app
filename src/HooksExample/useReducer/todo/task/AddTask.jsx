@@ -10,6 +10,7 @@ function AddTask({ dispatch }) {
       <input
         id="taskInput"
         type="text"
+        value={!task ? "" : null}
         onChange={(e) => {
           setTask(e.target.value);
         }}
@@ -27,6 +28,7 @@ function AddTask({ dispatch }) {
                 isCompleted: false,
               },
             });
+            setTask(null);
           }
         }}
       >

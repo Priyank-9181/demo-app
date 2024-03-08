@@ -6,5 +6,6 @@ export function setTaskInLocalStorage(tasklist) {
 export function getTaskInLocalStorage() {
   const string = localStorage.getItem("key");
   const data = JSON.parse(string);
+  console.log(data);
   return data;
 }
