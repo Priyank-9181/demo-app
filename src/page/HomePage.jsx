@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { fetchPokemonDetail } from "../../../services/apiService";
+import { useParams } from "react-router-dom";
 import Loading from "../component/Loading";
 import Pagination from "../component/Pagination";
 import SearchBar from "../component/SearchBar";
 import PokemonList from "../component/pokemon/PokemonList";
+import { fetchPokemonDetail } from "../services/apiService";
 import styles from "../style/pokedex/homePage.module.css";
 import { useMultipleFetch } from "../utils/useFetch";
 
 function HomePage() {
-  const [page, setPage] = useState(0);
+  const { pageNo } = useParams();
+  
+  const id = Number(pageNo);
+
+  const [page, setPage] = useState(id);
   const limit = 20;
   const offset = page * limit;
 
@@ -40,13 +45,16 @@ function HomePage() {
       >
         <div className={styles.cardContainer}>
           <PokemonList
+            pageNo={pageNo}
             pokemon={pokemon}
             searchData={searchData}
             setSearchData={setSearchData}
             query={query}
           />
         </div>
-        <Pagination page={page} setPage={setPage} />
+        {searchData && query ? null : (
+          <Pagination page={page} setPage={setPage} />
+        )}
       </div>
     </>
   );

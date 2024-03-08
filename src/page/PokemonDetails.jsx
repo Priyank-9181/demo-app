@@ -10,20 +10,14 @@ import styles from "../style/pokemonDetail/detailPage.module.css";
 import { useFetch } from "../utils/useFetch";
 
 function PokemonDetails() {
-  const { id: str } = useParams();
+  const { id: str, pageNo } = useParams();
   const id1 = Number(str);
- 
+
   const [handleID, setHandleId] = useState(id1);
 
   const { pokemon, loading, error } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${handleID}`
   );
-
-  let temp;
-
-  if (pokemon) {
-    temp = pokemon.species.url;
-  }
 
   const { pokemon: info } = useFetch(pokemon ? pokemon.species.url : `null`);
 
@@ -40,6 +34,7 @@ function PokemonDetails() {
         setHandleId={setHandleId}
         handleID={handleID}
         id={pokemon.id}
+        pageNo={pageNo}
       />
 
       <TitleComponent id={pokemon.id} name={pokemon.name} />
@@ -50,7 +45,7 @@ function PokemonDetails() {
 
       <div className={styles.evolMainContainer}>
         <div className={styles.evolInnerContainer}>
-          <EvolutionOfPokemon id1={handleID} />
+          <EvolutionOfPokemon pageNo={pageNo} id1={handleID} />
         </div>
       </div>
     </div>

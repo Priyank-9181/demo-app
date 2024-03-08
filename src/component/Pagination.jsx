@@ -35,17 +35,23 @@ function Pagination(props) {
         }}
       >
         {props.page === 0 ? (
-          <button onClick={handleClickNext} className={style.button_30}>
-            Next
-          </button>
-        ) : (
-          <>
-            <button onClick={handleClickPrevious} className={style.button_30}>
-              Previous
-            </button>
+          <a href={`/${props.page}`}>
             <button onClick={handleClickNext} className={style.button_30}>
               Next
             </button>
+          </a>
+        ) : (
+          <>
+            <a href={`/${props.page}`}>
+              <button onClick={handleClickPrevious} className={style.button_30}>
+                Previous
+              </button>
+            </a>
+            <a href={`/${props.page}`}>
+              <button onClick={handleClickNext} className={style.button_30}>
+                Next
+              </button>
+            </a>
           </>
         )}
       </div>

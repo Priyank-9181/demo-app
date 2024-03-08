@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import styles from "../../style/pokemonDetail/button.module.css";
 
-function HandleButton({ setHandleId, handleID, id }) {
+function HandleButton({ setHandleId, handleID, id, pageNo }) {
   function handleNext() {
     if (id < 1025) {
       setHandleId(() => handleID + 1);
@@ -21,8 +21,12 @@ function HandleButton({ setHandleId, handleID, id }) {
   return (
     <>
       <div className={styles.container}>
-        <Button onClick={handlePrevious}>Prvious</Button>
-        <Button onClick={handleNext}>Next</Button>
+        <a href={`/${pageNo}/pokemon/${handleID}`}>
+          <Button onClick={handlePrevious}>Prvious</Button>
+        </a>
+        <a href={`/${pageNo}/pokemon/${handleID}`}>
+          <Button onClick={handleNext}>Next</Button>
+        </a>
       </div>
     </>
   );

@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  height: 4rem;
+  background-color: #5c6bc0;
+  padding: 16px 24px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  display: flex;
+}
+
+.linksContainer ul {
+  display: flex;
+  list-style-type: none;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.linksContainer ul a {
+  text-decoration: none;
+}
+
+.isActive {
+  color: #1a237e;
+}

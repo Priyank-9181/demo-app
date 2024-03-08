@@ -1,25 +1,15 @@
 import React from "react";
-import { Button, Col, Form, InputGroup, Navbar, Row } from "react-bootstrap";
+import { Button, Col, Form, Navbar, Row } from "react-bootstrap";
 
 function SearchBar(props) {
   return (
     <Navbar
-      className="p-2 justify-content-between"
+      className="d-flex justify-content-center"
       style={{
         backgroundColor: "#9fa8da",
       }}
     >
-      <Form inline>
-        <h1
-          style={{
-            fontSize: "2.2rem",
-            color: "white",
-          }}
-        >
-          PokeDex
-        </h1>
-      </Form>
-      <Form inline>
+      <Form>
         <Row>
           <Col xs="auto">
             <Form.Control
@@ -28,6 +18,7 @@ function SearchBar(props) {
               className=" mr-sm-2"
               onChange={(e) => {
                 props.setQuery(e.target.value);
+                console.log(e.target.value);
               }}
             />
           </Col>

@@ -1,0 +1,94 @@
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 32px;
+  width: auto;
+  background-color: #c5cae9;
+  border-radius: 15px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.detailContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detailContainer i {
+  font-size: 1.5rem;
+}
+
+.detailContainer div p {
+  margin: 0%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 16px 32px;
+
+  gap: 16px;
+}
+
+.formContainer {
+  padding: 16px;
+  background-color: #c5cae9;
+  border-radius: 15px;
+  flex-grow: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.formContainer form label {
+  font-size: 1.5rem;
+  color: #f1f8e9;
+}
+
+.formContainer form input {
+  border: 1px solid #b0bcff;
+  border-radius: 8px;
+  outline: none;
+  padding-left: 4px;
+}
+
+.formContainer form textarea {
+  border: 1px solid #b0bcff;
+  border-radius: 8px;
+  outline: none;
+  padding-left: 4px;
+}
+
+.formContainer form button {
+  border: none;
+  background-color: #3f51b5;
+  padding: 16px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 15px;
+}
+
+.formContainer form button:hover {
+  background-color: #303f9f;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: e8eaf6;
+  padding: 16px 32px;
+}

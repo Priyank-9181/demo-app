@@ -3,7 +3,7 @@ import CanvasJSReact from "@canvasjs/react-charts";
 import Loading from "../Loading";
 
 function StatsChart({ stats }) {
-  let CanvasJS = CanvasJSReact.CanvasJS;
+  // let CanvasJS = CanvasJSReact.CanvasJS;
   let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
   if (!stats) {

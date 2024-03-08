@@ -4,19 +4,19 @@ import styles from "../style/notFound.module.css";
 
 function NotFound() {
   const navigate = useNavigate();
-  const [count, setCount] = useState(3);
+  const [count, setCount] = useState(4);
 
   useEffect(() => {
     const id = setInterval(() => {
       setCount((count) => {
         if (count === 0) {
           clearInterval(id);
-          navigate("/");
+          navigate(`/${0}`);
         }
         return count - 1;
       });
     }, 1000);
-  }, []);
+  }, [navigate]);
 
   return (
     <div className={styles.container}>

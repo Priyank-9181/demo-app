@@ -10,7 +10,7 @@ function PokemonCard(props) {
     <div
       className={styles.cardContainerStyles}
       onClick={() => {
-        navigate(`pokemon/${props.id}`);
+        navigate(`/${props.pageNo}/pokemon/${props.id}`);
       }}
     >
       <h6

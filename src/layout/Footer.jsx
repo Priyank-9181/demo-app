@@ -1,12 +1,10 @@
 import React from "react";
-import { companyName } from "../../DataFiles/ShinchanData";
+import styles from "../style/layout/footer.module.css";
 
 function Footer() {
   return (
-    <div>
-      <footer>
-        <h1>&copy; 2024 {companyName}. All rights reserved.</h1>
-      </footer>
+    <div className={styles.container}>
+      <p>&copy; all rights reserved text or the Pokedex symbol.</p>
     </div>
   );
 }

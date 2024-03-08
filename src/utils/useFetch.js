@@ -6,7 +6,6 @@ export function useFetch(url) {
   const [error, setError] = useState(null);
 
   async function getPokemonList() {
-    const temp = [];
     setLoading(true);
     try {
       setLoading(true);

@@ -3,7 +3,7 @@ import styles from "../../style/pokemonDetail/chainOfEvol.module.css";
 import { useMultiple } from "../../utils/useFetch";
 import Loading from "../Loading";
 
-function ChainOfEvol({ chain }) {
+function ChainOfEvol({ chain, pageNo }) {
   const { loading, pokemon, error } = useMultiple(chain);
 
   if (loading) {
@@ -16,10 +16,11 @@ function ChainOfEvol({ chain }) {
 
   const imgFrame = pokemon.map((value, index) => {
     return (
-      <a key={index} href={`/pokemon/${value.id}`}>
+      <a key={index} href={`/${pageNo}/pokemon/${value.id}`}>
         <div className={styles.container}>
           <img
             className={styles.imgContainer}
+            alt={value.name}
             src={value.sprites.other["official-artwork"].front_default}
           />
           <h6>{value.name.toUpperCase()}</h6>

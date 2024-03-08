@@ -1,11 +1,12 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
 
-function PokemonList({ pokemon, searchData, query, setSearchData }) {
+function PokemonList({ pokemon, searchData, query, setSearchData, pageNo }) {
   return (
     <>
       {searchData && query ? (
         <PokemonCard
+          pageNo={pageNo}
           key={searchData.id}
           name={searchData.name}
           id={searchData.id}
@@ -18,6 +19,7 @@ function PokemonList({ pokemon, searchData, query, setSearchData }) {
         pokemon.map(function (value) {
           return (
             <PokemonCard
+              pageNo={pageNo}
               key={value.id}
               name={value.name}
               id={value.id}

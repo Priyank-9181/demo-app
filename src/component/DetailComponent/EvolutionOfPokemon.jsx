@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { fetchPokemon } from "../../../../services/apiService";
+import { fetchPokemon } from "../../services/apiService";
 import ChainOfEvol from "./ChainOfEvol";
 
-function EvolutionOfPokemon({ id1 }) {
-  const [data, setData] = useState(null);
+function EvolutionOfPokemon({ id1, pageNo }) {
+  // const [data, setData] = useState(null);
   const [chain, setChain] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function EvolutionOfPokemon({ id1 }) {
         `https://pokeapi.co/api/v2/pokemon-species/${id1}`
       );
 
-      setData(data.evolution_chain.url);
+      // setData(data.evolution_chain.url);
 
       if (data.evolution_chain.url) {
         async function sec() {
@@ -63,7 +63,7 @@ function EvolutionOfPokemon({ id1 }) {
 
   return (
     <div>
-      <ChainOfEvol chain={link} />
+      <ChainOfEvol pageNo={pageNo} chain={link} />
     </div>
   );
 }
