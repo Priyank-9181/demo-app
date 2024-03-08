@@ -1,0 +1,35 @@
+.outerContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.innerContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: aqua;
+  border-radius: 15px;  
+  border: 1px solid blue;
+  padding: 40px;
+}
+
+.innerContainer button {
+  padding: 16px 24px;
+  border-radius: 50%;
+  color: rgb(255, 49, 49);
+  border: 1px solid rgb(142, 248, 170);
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.innerContainer p {
+    margin: 0px;
+    font-size: 2rem;
+}
