@@ -1,0 +1,29 @@
+.img {
+  width: 284px;
+  height: 250px;
+  border-radius: 15px;
+}
+
+.container {
+  width: 250px;
+  height: auto;
+  padding: 16px;
+  margin-top: -4px;
+  border-radius: 15px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: #dae3dc;
+  /* box-sizing: border-box; */
+}
+
+.container > h1 {
+  font-size: 1.75rem;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
