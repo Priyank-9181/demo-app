@@ -12,8 +12,6 @@ function EvolutionOfPokemon({ id1, pageNo }) {
         `https://pokeapi.co/api/v2/pokemon-species/${id1}`
       );
 
-      // setData(data.evolution_chain.url);
-
       if (data.evolution_chain.url) {
         async function sec() {
           const evolution = await fetchPokemon(data.evolution_chain.url);

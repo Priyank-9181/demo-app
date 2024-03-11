@@ -10,7 +10,7 @@ import { useMultipleFetch } from "../utils/useFetch";
 
 function HomePage() {
   const { pageNo } = useParams();
-  
+
   const id = Number(pageNo);
 
   const [page, setPage] = useState(id);

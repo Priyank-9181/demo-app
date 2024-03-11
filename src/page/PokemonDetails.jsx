@@ -30,13 +30,6 @@ function PokemonDetails() {
 
   return (
     <div>
-      <HandleButton
-        setHandleId={setHandleId}
-        handleID={handleID}
-        id={pokemon.id}
-        pageNo={pageNo}
-      />
-
       <TitleComponent id={pokemon.id} name={pokemon.name} />
 
       <BasicInfo pokemon={pokemon} info={info} />
@@ -48,6 +41,13 @@ function PokemonDetails() {
           <EvolutionOfPokemon pageNo={pageNo} id1={handleID} />
         </div>
       </div>
+
+      <HandleButton
+        setHandleId={setHandleId}
+        handleID={handleID}
+        id={pokemon.id}
+        pageNo={pageNo}
+      />
     </div>
   );
 }
