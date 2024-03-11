@@ -58,7 +58,12 @@ function PrevArrow(props) {
 
 function Carousel() {
   const settings = {
-    speed: 3000,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <NextArrow />,
