@@ -18,7 +18,6 @@ function SearchBar(props) {
               className=" mr-sm-2"
               onChange={(e) => {
                 props.setQuery(e.target.value);
-                console.log(e.target.value);
               }}
             />
           </Col>
