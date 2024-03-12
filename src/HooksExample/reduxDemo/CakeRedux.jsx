@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { restock, sell } from "../../redux/slices/cakeSlice";
-import styles from "./store.module.css";
 import { restockIC, sellIC } from "../../redux/slices/iceCreamSlice";
+import { fetchUsers } from "../../redux/slices/userSlice";
+import styles from "./store.module.css";
 
 function CakeRedux() {
   const cake = useSelector((state) => {
@@ -13,7 +14,9 @@ function CakeRedux() {
     return state.iceCream;
   });
 
-  console.log(iceCream);
+  const user = useSelector((store) => {
+    return store.user;
+  });
 
   const dispatch = useDispatch();
 
@@ -32,6 +35,14 @@ function CakeRedux() {
   function restockIceCream() {
     dispatch(restockIC(10));
   }
+
+  console.log(user.loading);
+  console.log(user.error);
+  console.log(user.users);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
 
   return (
     <div className={styles.outerContainer}>
