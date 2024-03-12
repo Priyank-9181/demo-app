@@ -44,13 +44,13 @@ function FormDetails() {
       </form>
       {isOpen && (
         <Module
-          title={isError ? "Failed!" : "Success!"}
+          title={isError ? "Failed" : "Success 🎉"}
           closeBtnText="Ok"
           component={
             isError ? (
               <p>Something went wrong!</p>
             ) : (
-              <p>Message sent successfully!</p>
+              <p>Message sent successfully.</p>
             )
           }
           onClose={onClose}

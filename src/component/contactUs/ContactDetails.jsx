@@ -33,9 +33,9 @@ function ContactDetails() {
   return (
     <div className={styles.contactContainer}>
       {component}
-      <div style={{ width: "100%" }}>
+      <div className={styles.mapContainer} style={{ width: "100%" }}>
         <iframe
-        title="map"
+          title="map"
           className={styles.mapStyle}
           width="100%"
           height="200"

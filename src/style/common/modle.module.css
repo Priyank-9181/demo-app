@@ -25,12 +25,13 @@
   gap: 8px;
 }
 
-.modalFooterContainer button:last-child {
+.modalFooterContainer button {
+  border: none;
   background-color: #388e3c;
-  border-radius: 2px;
+  border-radius: 15px;
   min-width: 75px;
 }
 
-.modalFooterContainer button:last-child:hover {
+.modalFooterContainer button:hover {
   background-color: #1b5e20;
 }

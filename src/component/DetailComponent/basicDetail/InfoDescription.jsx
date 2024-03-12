@@ -6,13 +6,12 @@ function InfoDescription({ pokemon, info }) {
     <div className={styles.mainContainer}>
       {/* Info */}
       <div>
+        {console.log(info.flavor_text_entries)}
         <p style={{ fontSize: "1.2rem" }}>
           {info.flavor_text_entries &&
           info.flavor_text_entries.length &&
           info.flavor_text_entries.length > 0
-            ? info.flavor_text_entries[2].flavor_text
-                .toString()
-                .replace("\f", " ")
+            ? info.flavor_text_entries[0].flavor_text.replace("\f", " ")
             : "No Record Found"}
         </p>
       </div>
